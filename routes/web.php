@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +11,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', static function () {
     return view('welcome');
 });
+
+
+
+Auth::routes();
+Route::get('/home', [HomeController::class,'index'])->name('home');
+Route::get('meetup-conferencing/{meetup}',[HomeController::class,'joinMeetup']);
+Route::post('create-meetup',[HomeController::class,'saveMeetup']);
