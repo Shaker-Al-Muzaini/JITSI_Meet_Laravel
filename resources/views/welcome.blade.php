@@ -22,11 +22,13 @@
         <script src='https://meet.jit.si/external_api.js'></script>
         <script type="text/javascript">
             function codeAddress(){
+
                 const domain = 'meet.jit.si';
                 const options = {
+
                     roomName: 'IdNomberASD',
-                    width: 700,
-                    height: 700,
+                    width: 800,
+                    height: 800,
                     parentNode: document.querySelector('#meet'),
                     lang: 'ar',
                     userInfo: {
